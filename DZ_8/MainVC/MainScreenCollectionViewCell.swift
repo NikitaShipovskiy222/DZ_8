@@ -11,8 +11,7 @@ protocol MainScreenProtocol: AnyObject{
     static var resuldId: String {get}
 }
 
-    
-class MainScreenCollectionViewCell: UICollectionViewCell, MainScreenProtocol {
+final class MainScreenCollectionViewCell: UICollectionViewCell, MainScreenProtocol {
     static var resuldId: String = "MainScreenCollectionViewCell"
 
     
@@ -60,6 +59,7 @@ class MainScreenCollectionViewCell: UICollectionViewCell, MainScreenProtocol {
             label.numberOfLines = 0
             label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
             label.textColor = UIColor(named: "dateColor")
+            
         }
     }(UILabel())
     
@@ -87,7 +87,7 @@ class MainScreenCollectionViewCell: UICollectionViewCell, MainScreenProtocol {
         boldLabel.text = item.textMain
         descriptonLabel.text = item.text
         userNameLabel.text = item.userName
-        labelDate.text = item.date
+        labelDate.text = item.date1.getDataDifarence()
         
         
         
@@ -101,6 +101,7 @@ class MainScreenCollectionViewCell: UICollectionViewCell, MainScreenProtocol {
         setLabelDate()
         setDescriptonLabel()
         setBoldLabel()
+        
     }
     
     
@@ -157,4 +158,5 @@ class MainScreenCollectionViewCell: UICollectionViewCell, MainScreenProtocol {
 
     
 }
+
 
